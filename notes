@@ -1,0 +1,18 @@
+Operators : 
+
+Arithmatic
+Assignment
+Logical
+Comparisoion
+Identity
+Membership
+
+Statments : 
+conditional : 
+- if -else
+
+lopping : 
+- for, while
+
+control : 
+- break, continue, pass
