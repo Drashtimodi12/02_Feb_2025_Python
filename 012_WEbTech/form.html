@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+       .textField {
+            width: 150px; 
+            height: 20px; 
+            border: 1px solid red;
+            border-radius: 5px;
+            background-color: aquamarine;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="index.html" method="post">
+        <fieldset>
+            <legend>Registration Form</legend>
+        <label for="uname">Username</label>
+        <input type="text" id="uname" name="uname" class="textField" placeholder="Enter username"
+        style="">
+        <br>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="textField" placeholder="Enter email">
+        <br>
+        <br>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" class="textField" placeholder="Enter password">
+        <br>
+        <br>
+        <label>Gender</label>
+        <input type="radio" name="gender" value="male" id="male" checked>Male
+        <input type="radio" name="gender" value="female" id="female">Female
+        <br>
+        <br>
+        <label>Language</label>
+        <input type="checkbox" name="lang" value="gij">Gujarati
+        <input type="checkbox" name="lang" value="eng">English
+        <input type="checkbox" name="lang" value="hindi">Hindi
+        <br>
+        <br>
+        <label>Country</label>
+        <select name="Country" id="country" class="textField">
+            <option value="1">India</option>
+            <option value="2">USA</option>
+            <option value="3">Canada</option>
+
+        </select>
+        <br>
+        <br>
+        <label>Address</label>
+        <textarea name="Address" id="Address" ></textarea>
+        <br>
+        <br>
+        <input type="submit">
+        <input type="reset">
+    </fieldset>
+    </form>
+
+</body>
+</html>

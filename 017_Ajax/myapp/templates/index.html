@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function(){
+            getcountris()
+        })
+
+        const getcountris = ()=>{
+            $.get("countries",{},function(rt){
+               
+                var options = "<option>---select country---</option>"
+                rt.data.map(ele=>{
+                    options+="<option value="+ele.id+">"+ele.name+"</option>"
+                })
+
+                $("#country").html(options)
+
+            })
+        }
+
+        const getStates = (cid)=>{
+            $.get("states",{cid},function(rt){
+                var options = "<option>---select state---</option>"
+                rt.data.map(ele=>{
+                    options+="<option value="+ele.id+">"+ele.name+"</option>"
+                })
+
+                $("#state").html(options)
+            })
+        }
+
+        const getCities = (sid)=>{
+            $.get("cities",{sid},function(rt){
+                var options = "<option>---select city---</option>"
+                rt.data.map(ele=>{
+                    options+="<option value="+ele.id+">"+ele.name+"</option>"
+                })
+
+                $("#city").html(options)
+            })
+        }
+
+        const search = (data)=>{
+            
+            $.get("search",{data},function(rt){
+                
+                var rows = "<ul>"
+                rt.data.map(ele=>{
+                    rows+="<li>"+ele.name+"</li>"     
+                })
+                rows+="</ul>"
+               
+
+                $("#sdata").html(rows)
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" onkeyup="search(value)">
+    <div id="sdata"></div>
+
+    <br>
+   
+ <select name="country" id="country" onchange="getStates(value)">
+    <option value="0">---Select country---</option>
+ </select>
+
+ <select name="state" id="state" onchange="getCities(value)">
+    <option value="0">---Select State---</option>
+ </select>
+
+ <select name="city" id="city">
+    <option value="0">---Select City---</option>
+ </select>
+
+ <h2><a href="{%url 'crud'%}">CRUD APP</a></h2>
+</body>
+</html>

@@ -1,0 +1,29 @@
+CREATE VENV : 
+py -m venv <ENVNAME>
+
+ACTIVATE ENEV : 
+<ENVNAME>/Scripts/ACTIVATE
+
+INSTALL DAJANGO :
+pip install DJANGO
+
+CREATE PROJECT : 
+py -m django startproject <PROJECTNAME>
+
+CREATE APP : 
+py manage.py startapp <APPNAME>
+
+RUN PROEJCT :
+py manage.py runserver
+
+MIGRATIONS : 
+py manage.py makemigrations
+
+MIGRATE : 
+py manage.py migrate
+
+SHELL : 
+py manage.py shell
+
+CREATE ADMIN
+py manage.py createsuperuser

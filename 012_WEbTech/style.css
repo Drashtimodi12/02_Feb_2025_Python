@@ -1,0 +1,18 @@
+*{
+    background-color: cornflowerblue;
+}
+
+h1{
+    color: red;
+}
+
+h1:hover{
+    color: chartreuse;
+}
+
+a:hover{
+    color: aqua;
+}
+a:visited{
+    color: darkgreen;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+            {{msg}}
+            <form action="{%url 'register'%}" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                <input type="hidden" value="{{student.id}}" name="id">
+                <label for="uname">Username</label>
+                <input type="text" name="uname" id="uname" value="{{student.username}}">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" value="{{student.email}}">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" value="{{student.phone}}">
+                <label for="age">Age</label>
+                <input type="text" name="age" id="age" value="{{student.age}}">
+                <label for="img">Image</label>
+                <input type="file" name="file">
+                <input type="submit">
+
+            </form>
+
+            <br>
+
+            <h1>Student Details</h1>
+
+            <table border="1" cellpadding="5">
+                <tr>
+                    <td>Id</td>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>Age</td>
+                    <td>Image</td>
+                    <td colspan="2">Action</td>
+                </tr>
+
+                {%for student in students%}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.username}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>{{student.age}}</td>
+                    <td><img src="media/{{student.image}}" alt="{{student.image}}" width="100px" height="100px"></td>
+                    <td><a href="{%url 'delete'%}?stid={{student.id}}">Delete</a></td> 
+                    <td><a href="{%url 'update'%}?stid={{student.id}}">Update</a></td>
+                </tr>
+                {%endfor%}
+               
+            </table>
+</body>
+</html>
